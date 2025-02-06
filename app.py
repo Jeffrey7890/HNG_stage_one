@@ -22,10 +22,17 @@ def odd_even(b):
         return 'even'
     return 'odd'
 
+def is_integer(s):
+    try:
+        int(s)
+        return True
+    except ValueError:
+        return False
+
 @app.route('/api/classify-number')
 def task():
     number = request.args.get('number')
-    if number.isdigit() is not True:
+    if is_integer(number) is not True:
         r = jsonify({'number':'alphabet', 'error':'true'})
         r.status_code = 400
         return r
