@@ -2,11 +2,12 @@ from isArmstrong import isArmstrong,power
 from isPrime import isPrime
 from isPerfect import isPerfect
 from flask import Flask, jsonify, Response
+from flask_cors import CORS
 import requests
 
 
 app = Flask(__name__)
-
+CORS(app)
 
 def armstrong(arm):
     if arm is True:
