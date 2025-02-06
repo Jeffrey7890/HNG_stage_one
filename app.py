@@ -1,7 +1,7 @@
 from isArmstrong import isArmstrong,power
 from isPrime import isPrime
 from isPerfect import isPerfect
-from flask import Flask, jsonify, Response
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 import requests
 
@@ -22,8 +22,9 @@ def odd_even(b):
         return 'even'
     return 'odd'
 
-@app.route('/api/<number>')
-def task(number):
+@app.route('/api/classify-number')
+def task():
+    number = request.args.get('number')
     if number.isdigit() is not True:
         r = jsonify({'number':'alphabet', 'error':'true'})
         r.status_code = 400
