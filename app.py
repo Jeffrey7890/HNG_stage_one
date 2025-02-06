@@ -17,7 +17,7 @@ def check(number):
     return (number % 2 == 0)
 
 def odd_even(b):
-    if b is True:
+    if check(b) == True:
         return 'even'
     return 'odd'
 
