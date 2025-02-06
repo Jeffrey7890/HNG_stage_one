@@ -5,7 +5,7 @@ The **Number Classification API** takes a number as input and returns its mathem
 
 ## API Endpoint  
 ```http
-GET <your-domain.com>/api/classify-number?number=371
+GET https://hng-stage-one-427o.onrender.com/api/classify-number?number=371
 ```
 
 ## Response Format  
